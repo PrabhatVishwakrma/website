@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website with Image Slider</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Navbar styles */
+    #navbar {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #navbar a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px;
+      margin: 0 10px;
+    }
+
+    /* Main container styles */
+    #main-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* Box styles */
+    #box {
+      width: 80%;
+      max-width: 800px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    /* Slider styles */
+    #slider-container {
+      position: relative;
+      overflow: hidden;
+    }
+
+    #image-slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slider-item {
+      flex: 0 0 100%;
+      box-sizing: border-box;
+    }
+
+    .slider-image {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .slider-description {
+      padding: 10px;
+      text-align: center;
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div id="navbar">
+  <div id="logo">
+    <!-- Your logo goes here -->
+    <img src="logo.png" alt="Logo" style="height: 40px;">
+  </div>
+  <div id="navbar-links">
+    <a href="#">Home</a>
+    <a href="#">Login</a>
+    <a href="#">Signup</a>
+  </div>
+</div>
+
+<!-- Main container with box and image slider -->
+<div id="main-container">
+  <div id="box">
+    <!-- Image Slider -->
+    <div id="slider-container">
+      <div id="image-slider">
+        <!-- Slide 1 -->
+        <div class="slider-item">
+          <img class="slider-image" src="https://yt3.ggpht.com/a/AATXAJzQvaSMSLeTnMy7O-uEDgRGetR30KCfkRSiOA=s900-c-k-c0xffffffff-no-rj-mo" alt="Image 1"style="height:500px;">
+          <div class="slider-description">
+            <p>Description for Image 1</p>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="slider-item">
+          <img class="slider-image" src="https://th.bing.com/th/id/OIP.sbn35Ht6d4aUDzcKZQNxaQAAAA?w=474&h=336&rs=1&pid=ImgDetMain" alt="Image 2">
+          <div class="slider-description">
+            <p>Description for Image 2</p>
+          </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="slider-item">
+          <img class="slider-image" src="https://th.bing.com/th/id/OIP.5MFZ0qicAZkWuPr-uyN8QQHaEE?rs=1&pid=ImgDetMain" alt="Image 3">
+          <div class="slider-description">
+            <p>Description for Image 3</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const sliderContainer = document.getElementById('slider-container');
+  const imageSlider = document.getElementById('image-slider');
+  const slides = document.querySelectorAll('.slider-item');
+
+  // Adjust the interval (in milliseconds) for automatic sliding
+  const slideInterval = 3000;
+
+  let currentIndex = 0;
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateSlider();
+  }
+
+  function updateSlider() {
+    const transformValue = -currentIndex * 100 + '%';
+    imageSlider.style.transform = 'translateX(' + transformValue + ')';
+  }
+
+  setInterval(nextSlide, slideInterval);
+</script>
+
+</body>
+</html>

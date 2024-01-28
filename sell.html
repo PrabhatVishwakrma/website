@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Sell Your Website or App</title>
+</head>
+<style>
+        body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    /* background-color: #333; */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(to right, #4caf50, #2196f3);
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    padding:10px;
+    background: linear-gradient(to right, #4caf50, #2196f3);
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    color: #333;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.listing {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.listing h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.listing p {
+    color: #555;
+    margin-bottom: 8px;
+}
+
+    </style>
+    <script>
+        function showAlert(){
+            alert('Your website is listed successfully!');
+            document.getElementById('myform').reset();
+        }
+    </script>
+<body>
+    <header>
+        <h1>Welcome to Website and App Marketplace</h1>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>Sell Your Website or App</h2>
+            <form action="warningpage.html" method="post" onsubmit="showAlert(); return false;">
+                <label for="type">Type:</label>
+                <select id="type" name="type" required>
+                    <option value="website">Website</option>
+                    <option value="app">App</option>
+                </select>
+
+                <label for="name">Website Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="weblink">Website Link:</label>
+                <input type="text" id="weblink" name="weblink" required>
+
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+
+                <label for="price">Price ($):</label>
+                <input type="number" id="price" name="price" min="0" required>
+
+                <button type="submit">Submit Listing</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Thank you for visit my site</h2>
+            <!-- Display featured listings from the database -->
+        </section>
+    </div>
+</body>
+</html>
